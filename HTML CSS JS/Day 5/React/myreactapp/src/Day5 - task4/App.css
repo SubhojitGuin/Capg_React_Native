@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  /* background-color: lightblue; */
+  background: linear-gradient(to right, lightblue, rgb(102, 102, 255));
+  padding: 0px;
+  color: white;
+}
+
+.student-info-container {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.student-form-container, .profile-preview-container {
+  padding: 20px;
+  width: 40%;
+  height: 70vh;
+  border-radius: 10px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.9);
+}
+
+.student-form-container {
+  background-color: rgb(187, 251, 187);
+}
+
+.student-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.student-form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.student-form-group input, .student-form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.student-form-group input:focus, .student-form-group textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.student-form-element {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.student-form-element select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.student-checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.student-checkbox-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.student-checkbox-group label {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-toggle-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05) translateY(-2px);
+}
+
+.toggle-button:active {
+  background-color: #004085;
+  transform: scale(0.95) translateY(2px);
+}
+
+.profile-preview-container {
+  background-color: rgb(255, 213, 213);
+}
+
+.profile-preview-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}

@@ -1,0 +1,108 @@
+.App {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(27, 166, 212);
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid black;
+  color: white;
+}
+
+.mynav {
+  display: flex;
+  gap: 20px;
+}
+
+.mynav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.myfooter {
+  background-color: rgb(27, 166, 212);
+  color: white;
+  border: 1px solid black;
+}
+
+.myhero {
+  background-color: white;
+  border: 1 px solid black;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.myscrollbar {
+  background-color: lightgray;
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.myscrollbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.myscrollbar li {
+  padding: 10px;
+  font-size: larger;
+}
+
+.mymaincontent {
+  background-color: white;
+  flex: 1;
+  padding: 20px;
+  margin: 20px;
+}
+
+.mywelcome, .mymoreinfo {
+  padding: 20px;
+  margin: 5px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mymoreinfo img {
+  width: 80%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.mywelcome img {
+  width: 16%;
+  height: auto;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.mywelcome {
+  background-color: rgb(185, 245, 255);
+  height: 27vh;
+  color: rgb(23, 115, 182);
+}
+
+.mymoreinfo {
+  background-color: rgb(193, 255, 209);
+  height: 29vh;
+  color: rgb(32, 186, 50);
+}

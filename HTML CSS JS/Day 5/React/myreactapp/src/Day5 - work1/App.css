@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myheader {
+  background-color: lightblue;
+  padding: 20px;
+  border: 1 px solid black;
+}
+
+.myfooter {
+  background-color: lime;
+  padding: 20px;
+  border: 1 px solid black;
+}
+
+.myhero {
+  background-color: blueviolet;
+  padding: 20px;
+  border: 1 px solid black;
+  height: 80vh;
+}
