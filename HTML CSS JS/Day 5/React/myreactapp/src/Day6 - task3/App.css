@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.dashboard {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.appointment-section {
+  background-color: #fff;
+  margin: 20px auto;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+}
+
+.appointment-section h2 {
+  margin-bottom: 15px;
+  background-color: rgb(67, 126, 254);
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.appointment-card {
+  background-color: #f9f9f9;
+  margin: 10px auto;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.appointment-card div {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}

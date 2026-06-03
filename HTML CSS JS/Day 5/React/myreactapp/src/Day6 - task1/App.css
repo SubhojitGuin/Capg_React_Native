@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, lightblue, #d188ff);
+}
+
+.employee-card {
+  background-color: rgb(233, 231, 231);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px rgb(0, 0, 0, 0.5);
+}

@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  background-color: lightblue;
+  padding: 10px;
+  color: white;
+}
+
+.login-status {
+  color: green;
+}
+
+.profile-card {
+  width: 20%;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 2px rgb(0, 0, 0, 0.2);
+  background-color: aliceblue;
+}
+
+.profile-card button {
+  padding: 10px 20px;
+  background-color: lightblue;
+  border: none;
+}
+
+.profile-card button:hover {
+  box-shadow: 2px 5px 2px rgb(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.profile-card button:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
