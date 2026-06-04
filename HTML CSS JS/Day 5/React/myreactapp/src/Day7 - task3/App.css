@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.button-group {
+  background-color: antiquewhite;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.button-group button, .button-group select {
+  padding: 10px;
+}
+
+.child-card-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.child-card {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: lightgoldenrodyellow;
+  box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+  border: 1px solid burlywood;
+}
+
+.Normal {
+  color: green;
+}
+
+.High {
+  color: red;
+}
