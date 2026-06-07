@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.enhanced-component {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+}
+
+.course-card, .notification-box, .student-profile {
+  padding: 10px;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.student-profile {
+  background-color: rgb(229, 160, 160);
+  color: rgb(213, 45, 45);
+}
+
+.course-card {
+  background-color: rgb(209, 236, 241);
+  color: rgb(12, 84, 96);
+}
+
+.notification-box {
+  background-color: rgb(215, 248, 222);
+  color: rgb(0, 128, 4);
+}
