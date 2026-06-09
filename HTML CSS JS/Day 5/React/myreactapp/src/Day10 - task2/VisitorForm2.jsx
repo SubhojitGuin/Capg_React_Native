@@ -4,6 +4,9 @@ import * as Yup from 'yup';
 
 export default function VisitorForm2() {
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Set time to midnight for accurate comparison
+
   const validationSchema = Yup.object().shape({
     visitorName: Yup.string()
         .required('Visitor Name is required')
@@ -22,7 +25,9 @@ export default function VisitorForm2() {
         .required('Please select a department to visit'),
 
     visitDate: Yup.date()
-        .required('Visit date is required'),
+        .typeError('Invalid date format')
+        .required('Visit date is required')
+        .min(today, 'Visit date cannot be in the past'),
 
     purpose: Yup.string()
         .required('Purpose of visit is required')
@@ -51,9 +56,10 @@ export default function VisitorForm2() {
         acceptTerms: false
       }}
       validationSchema={validationSchema}
-      onSubmit={(values) => {
+      onSubmit={(values, { resetForm }) => {
         alert("Visitor request submitted successfully!");
         console.log(values);
+        resetForm();
       }}
     >
       {({ values, errors, touched }) => (
