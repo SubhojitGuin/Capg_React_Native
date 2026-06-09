@@ -1,26 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './Day8 - work3/App';
-import { router } from './Day9 - task2/routes';
+import App from './Day10 - task2/App';
+import { router } from './Day10 - task1/routes';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-// 
-
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
+
+
+// root.render(
+//   <React.StrictMode>
+//     <RouterProvider router={router} />
+//   </React.StrictMode>
+// );
 
 
 
