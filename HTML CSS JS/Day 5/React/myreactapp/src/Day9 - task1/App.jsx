@@ -25,6 +25,12 @@ export default function App() {
   }, []);
 
   function addToCart(product) {
+    setCart((prevCart) => 
+        (prevCart.includes(product))
+        ? prevCart
+        : [ ...prevCart, product]
+    );
+
     if (cart.filter((prod) => prod.id === product.id).length === 0) {
       setCart([...cart, product])
     }
