@@ -1,0 +1,89 @@
+import React from 'react'
+import SummaryCard from '../components/SummaryCard'
+import SearchAndFiltersComponent from '../components/SearchAndFiltersComponent'
+import { fetchCategories } from '../services/CategoryService';
+import RequestList from '../components/RequestList';
+import { fetchRequests } from '../services/RequestService';
+import CreateRequestForm from '../components/CreateRequestForm';
+
+export default function DashboardPage() {
+
+  const [categories, setCategories] = React.useState([]);
+
+  const [searchConditions, setSearchConditions] = React.useState({
+    searchText: '',
+    category: '',
+    status: ''
+  });
+  
+  const [requests, setRequests] = React.useState([]);
+
+  const [summary, setSummary] = React.useState({
+    total: 0,
+    open: 0,
+    inProgress: 0,
+    resolved: 0
+  });
+
+  const loadRequests = React.useCallback(() => {
+    fetchRequests()
+      .then((reqs) => {
+        setRequests(reqs);
+
+        const total = reqs.length;
+        const open = reqs.filter((r) => r.status === 'Open').length;
+        const inProgress = reqs.filter((r) => r.status === 'In Progress').length;
+        const resolved = reqs.filter((r) => r.status === 'Resolved').length;
+
+        setSummary({ total, open, inProgress, resolved });
+      });
+  }, []);
+
+  React.useEffect(() => {
+    loadRequests();
+    
+    fetchCategories()
+      .then((data) => setCategories(data));
+
+  }, [loadRequests]);
+
+  const filteredRequests = React.useMemo(() => {
+    return requests.filter((req) => {
+      const matchesSearchText = req.title.toLowerCase().includes(searchConditions.searchText.toLowerCase());
+      const matchesCategory = searchConditions.category ? req.category === searchConditions.category : true;
+      const matchesStatus = searchConditions.status ? req.status === searchConditions.status : true;
+      return matchesSearchText && matchesCategory && matchesStatus;
+    });
+  }, [requests, searchConditions]);
+
+  return (
+    <div className="container-fluid">
+      <div className="container-fluid mt-3">
+        <h1 className="fw-bold">Hostel Maintainance Dashboard</h1>
+        <p className="text-muted">Raise complaints, track status and filter requests.</p>
+      </div>
+
+      <div className="d-flex gap-3 flex-row justify-content-between my-1 mx-2">
+        <SummaryCard title="Total Requests" value={summary.total} color="blue" />
+        <SummaryCard title="Open" value={summary.open} color="red" />
+        <SummaryCard title="In Progress" value={summary.inProgress} color="yellow" />
+        <SummaryCard title="Resolved" value={summary.resolved} color="green" />
+      </div>
+
+      <div className="d-flex gap-4 justify-content-between flex-row my-3 mx-2">
+        <div style={{ flex: 1 }}>
+          <CreateRequestForm onRequestCreated={loadRequests} />
+        </div>
+        <div style={{ flex: 1 }}>
+          <SearchAndFiltersComponent
+            categories={categories} 
+            searchConditions={searchConditions} 
+            setSearchConditions={setSearchConditions}
+          />
+
+          <RequestList requests={filteredRequests} />
+        </div>
+      </div>
+    </div>
+  )
+}
