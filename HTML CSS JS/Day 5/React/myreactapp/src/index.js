@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './Day11 - task3/App';
+import App from './Day12 - work3/App';
 import { router } from './Day10 - task1/routes';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from "react-router";
