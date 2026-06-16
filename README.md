@@ -30,5 +30,17 @@
 | week-6 | Day 23 | | | |
 | week-6 | Day 24 | | | |
 | week-6 | Day 25 | | | |	 
+
+---
  	 	 	 	 	 
- 	 	 	 	 	 
+| Topic | Subtopics | Description |
+|---|---|---|
+| Axios / Fetch | Fetch API, Axios Basics | Introduces making HTTP calls using Fetch and Axios, handling promises, parsing responses, sending headers, handling loading states, and integrating API calls into React components. |
+| Axios / Fetch | Interceptors, Error Handling | Covers centralized API configuration, Axios interceptors for auth tokens, global error handling, retry strategies, showing loaders, and managing API failures gracefully. |
+| Zustand | Store Creation, State Access | Introduces Zustand as a lightweight state management library, creating stores, reading and updating state, writing actions, and comparing it with Context and Redux approaches. |
+| Redux & RTK | Redux Basics, Store Setup | Explains Redux core concepts including store, actions, reducers, unidirectional data flow, immutability, and integrating Redux into React applications. |
+| Redux Toolkit | Slices, Async Thunks | Covers Redux Toolkit best practices, creating slices, reducers and actions together, handling async logic using thunks, and simplifying Redux boilerplate for real projects. |
+| TanStack React Query | Query Basics, useQuery | Introduces server-state management, fetching and caching data using useQuery, automatic refetching, background updates, and reducing manual API state handling. |
+| TanStack React Query | Mutations, Optimization | Covers data mutation using useMutation, optimistic updates, cache invalidation, syncing UI with server state, and improving perceived performance of applications. |
+| React Testing | Vite vs Jest, Unit Testing | Explains testing fundamentals, configuring tests in Vite and Jest, writing unit and component tests, mocking dependencies, and ensuring code reliability. |
+| Optimization & Final Build | Performance, Debugging, Production Build | Covers React performance optimization techniques, lazy loading, code splitting, debugging using DevTools, preparing production builds, and finalizing a real-world React project. |
