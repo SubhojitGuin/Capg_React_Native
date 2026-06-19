@@ -11,20 +11,18 @@ export default function MainComponent() {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <div className='container-fluid pt-2'>
-        <div className='d-flex flex-row justify-content-between'>
-          <h1>Team Lunch RSVP Planner</h1>
-          <button
-            onClick={() => dispatch(reset())}
-            className='btn btn-outline-success m-2'
-          >Reset All</button>
-        </div>
-        <EventDetails/>
-        <FilterComponent/>
-        <SummaryHeader/>
-        <EmployeeList/>
+    <div className='container-fluid pt-2'>
+      <div className='d-flex flex-row justify-content-between'>
+        <h2 className='text-primary fw-bold m-3'>Team Lunch RSVP Planner</h2>
+        <button
+          onClick={() => dispatch(reset())}
+          className='btn btn-outline-success m-2'
+        >Reset All</button>
       </div>
+      <EventDetails/>
+      <FilterComponent/>
+      <SummaryHeader/>
+      <EmployeeList/>
     </div>
   )
 }

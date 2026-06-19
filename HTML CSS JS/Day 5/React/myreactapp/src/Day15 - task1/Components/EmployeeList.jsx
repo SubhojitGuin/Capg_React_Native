@@ -17,7 +17,7 @@ export default function EmployeeList() {
     (emp.status === status) ? 'active' : '';
 
   return (
-    <div className='container-fluid p-5 border rounded'>
+    <div className='container-fluid p-4 border rounded shadow-sm'>
       <div>
       <h1>Employees List</h1>
 
@@ -38,7 +38,14 @@ export default function EmployeeList() {
                 <tr key={emp.id}>
                   <td scope="row">{emp.name}</td>
                   <td>{emp.team}</td>
-                  <td>{emp.status}</td>
+                  <td>
+                    <div 
+                    className={`badge rounded-pill px-3 py-2 ${(emp.status === 'Going') ? 'bg-success' : (emp.status === 'Not Going') ? 'bg-danger' : 'bg-warning text-dark' }`}
+                    style={{ width: '100px' }}
+                    >
+                      {emp.status}
+                    </div>
+                  </td>
                   <td className='d-flex flex-row gap-2'>
                     <button 
                       onClick={() => dispatch(updateStatus({

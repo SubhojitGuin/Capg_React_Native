@@ -18,7 +18,7 @@ function SummaryCard({ title, value, color }) {
   }
 
   return (
-    <div className="card mb-2" style={{ borderLeft: `5px solid ${getColor(color)}`, flex: '1' }}>
+    <div className="card mb-2 shadow-sm" style={{ borderLeft: `5px solid ${getColor(color)}`, flex: '1' }}>
       <div className="card-body">
         <p className="card-text text-muted">{title}</p>
         <h5 className="card-title">{value}</h5>

@@ -10,28 +10,32 @@ export default function FilterComponent() {
   const isActive = (filter) => (filter === activeFilter) ? 'active' : '';
 
   return (
-    <div className='d-flex justify-content-start align-items-center gap-2 mb-2 border border-2 p-2 rounded'>
+    <div className='d-flex justify-content-start align-items-center gap-2 mb-2 border shadow-sm px-2 py-3 rounded'>
       <h3>Filter By Status:</h3>
       <div className='d-flex justify-content-start align-items-center gap-2'>
 
         <button 
           onClick={() => dispatch(updateFilter('All'))} 
-          className={`btn btn-outline-secondary ${isActive('All')}`}
+          className={`btn btn-outline-primary ${isActive('All')}`}
+          style={{ width: '100px' }}
         >All</button>
 
         <button 
           onClick={() => dispatch(updateFilter('Going'))} 
-          className={`btn btn-outline-secondary ${isActive('Going')}`}
+          className={`btn btn-outline-success ${isActive('Going')}`}
+          style={{ width: '100px' }}
         >Going</button>
 
         <button 
           onClick={() => dispatch(updateFilter('Not Going'))} 
-          className={`btn btn-outline-secondary ${isActive('Not Going')}`}
+          className={`btn btn-outline-danger ${isActive('Not Going')}`}
+          style={{ width: '100px' }}
         >Not Going</button>
 
         <button 
           onClick={() => dispatch(updateFilter('Pending'))} 
-          className={`btn btn-outline-secondary ${isActive('Pending')}`}
+          className={`btn btn-outline-warning ${isActive('Pending')}`}
+          style={{ width: '100px' }}
         >Pending</button>
 
       </div>

@@ -7,7 +7,7 @@ export default function EventDetails() {
   const cardStyle = 'w-100 p-2 rounded ps-4';
 
   return (
-    <div className='card mb-2'>
+    <div className='card mb-2 shadow-sm'>
       <div className='card-body'>
         <h1 className='card-title'>Event Details</h1>
         <div className='d-flex flex-row justify-content-between px-2 py-1'>
