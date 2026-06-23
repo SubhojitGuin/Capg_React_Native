@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
     "@react-native-vector-icons/material-design-icons": "^13.1.2",
     "expo": "~56.0.12",
+    "expo-camera": "~56.0.8",
+    "expo-image-picker": "~56.0.18",
     "expo-status-bar": "~56.0.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
