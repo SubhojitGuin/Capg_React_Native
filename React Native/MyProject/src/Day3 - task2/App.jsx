@@ -7,7 +7,7 @@ export default function App() {
   const [livePhotoCatured, setLivePhotoCatured] = useState(false);
   const [uploadedIdCard, setUploadedIdCard] = useState(false);
   const [photoUri, setPhotoUri] = useState(null);
-  const [idImage, setIdImage] = useState(null);
+  const [idImages, setIdImages] = useState([]);
 
   return (
     <View style={styles.container}>
@@ -25,7 +25,7 @@ export default function App() {
           <CaptureProfile setLivePhotoCatured={setLivePhotoCatured} photoUri={photoUri} setPhotoUri={setPhotoUri} />
         </View>
         <View style={[styles.halfScreen, styles.borderLeft]}>
-          <UploadID setUploadedIdCard={setUploadedIdCard} idImage={idImage} setIdImage={setIdImage} />
+          <UploadID setUploadedIdCard={setUploadedIdCard} idImages={idImages} setIdImages={setIdImages} />
         </View>
       </View>
 
@@ -35,7 +35,7 @@ export default function App() {
           disabled={!livePhotoCatured || !uploadedIdCard}
           onPress={() => {
             alert('Verification Submitted Successfully!');
-            setIdImage(null);
+            setIdImages([]);
             setPhotoUri(null);
             setLivePhotoCatured(false);
             setUploadedIdCard(false);

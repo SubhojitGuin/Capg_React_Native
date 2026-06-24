@@ -1,34 +1,39 @@
 import { Button, StyleSheet, Text, View, Image } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import * as ImagePicker from 'expo-image-picker';
 
-export default function UploadID({ setUploadedIdCard, idImage, setIdImage }) {
+export default function UploadID({ setUploadedIdCard, idImages, setIdImages }) {
 
   async function handleImagePicker() {
     let image = await ImagePicker.launchImageLibraryAsync({
+      allowsMultipleSelection: true,
       mediaTypes: ['images'],
-      allowsEditing: true,
-      aspect: [4, 3],
       quality: 1,
     })
 
     if (!image.canceled) {
-      setIdImage(image.assets[0].uri);
+      setIdImages(image.assets.map(asset => asset.uri));
       setUploadedIdCard(true);
     }
   }
 
   function handleImageRemover() {
-    setIdImage(null);
+    setIdImages([]);
     setUploadedIdCard(false);
   }
+
+  const hasImages = idImages && idImages.length > 0;
 
   return (
     <View style={styles.container}>
       <View style={styles.displayArea}>
         {
-          idImage ? (
-            <Image source={{ uri: idImage }} style={styles.fullMedia} />
+          hasImages ? (
+            <View style={styles.imageContainer}>
+              {idImages.map((idImage, index) => (
+                <Image key={index} source={{ uri: idImage }} style={styles.fullMedia} />
+              ))}
+            </View>
           ) : (
             <View style={styles.placeholderBox}>
               <Text style={styles.placeholderText}>No ID Uploaded</Text>
@@ -39,7 +44,7 @@ export default function UploadID({ setUploadedIdCard, idImage, setIdImage }) {
       
       <View style={styles.actionBlock}>
         {
-          idImage ? (
+          hasImages ? (
             <Button title='Remove ID Card' color="#d9534f" onPress={handleImageRemover} />
           ) : (
             <Button title='Upload ID Card' onPress={handleImagePicker} />
@@ -59,10 +64,15 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
-  fullMedia: {
+  imageContainer: {
     flex: 1,
     width: '100%',
-    height: '100%',
+    flexWrap: 'wrap'
+  },
+  fullMedia: {
+    flex: 1,
+    width: '20%',
+    height: '20%',
     resizeMode: 'cover',
   },
   placeholderBox: {
